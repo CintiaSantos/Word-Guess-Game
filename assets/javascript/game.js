@@ -37,7 +37,7 @@
                 renderDivs();
             } else {
                 if (guessesLeft < 1) {
-                    alert("You lose.  Game over");
+                    alert("GAME OVER!!! You Lose");
                     losses++;
                     guessesLeft = 9;
                     guessed = [];
@@ -50,4 +50,4 @@
                     console.log("You didn't win yet")
                 }
             }
-        }
+        } 
