@@ -12,7 +12,8 @@
         function renderDivs() {
             document.getElementById("wins").innerHTML = "Your wins so far: " + wins;
             document.getElementById("losses").innerHTML = "Your losses so far: " + losses;
-            document.getElementById("guessesLeft").innerHTML = `You have ${guessesLeft} guesses left.`;
+            // `You have ${guessesLeft} guesses left.`;
+            document.getElementById("guessLeft").innerHTML = "Number of guesses left: " + guessesLeft;
             document.getElementById("guessed").innerHTML = "letters you have guessed: " + guessed.join(", ")
         }
         
@@ -30,10 +31,13 @@
             var clientGuess = e.key
         
             if (clientGuess === targetLetter) {
-                alert("You win!")
+                alert("You win!");
+                wins++;
+                startGame();
+                renderDivs();
             } else {
                 if (guessesLeft < 1) {
-                    alert("You lose sucka.  Game over");
+                    alert("You lose.  Game over");
                     losses++;
                     guessesLeft = 9;
                     guessed = [];
